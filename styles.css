@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+.app-container {
+    max-width: 500px;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #111;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    border-radius: 8px;
+    padding: 5px 10px;
+    width: 60%;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    width: 100%;
+    padding: 5px;
+    outline: none;
+}
+
+.upload-btn {
+    background-color: #fe2c55;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-feed {
+    flex: 1;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+.video-card {
+    position: relative;
+    height: 100vh;
+    scroll-snap-align: start;
+    border-bottom: 1px solid #333;
+}
+
+.video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-info {
+    position: absolute;
+    bottom: 80px;
+    left: 10px;
+    max-width: 70%;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #fff;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.video-caption {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.video-actions {
+    position: absolute;
+    right: 10px;
+    bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.action-btn i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.action-btn .count {
+    font-size: 12px;
+}
+
+.comment-section {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    max-height: 50vh;
+    overflow-y: auto;
+    border-top: 1px solid #333;
+}
+
+.comments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.close-comments {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.comment {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.comment-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-username {
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.comment-text {
+    font-size: 14px;
+}
+
+.add-comment {
+    display: flex;
+    margin-top: 15px;
+}
+
+.add-comment input {
+    flex: 1;
+    background-color: #222;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: #fff;
+    outline: none;
+}
+
+.post-comment-btn {
+    background-color: #fe2c55;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0 15px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #000;
+    position: sticky;
+    bottom: 0;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.nav-item i {
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+.nav-item.active {
+    color: #fe2c55;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .video-info {
+        max-width: 60%;
+    }
+    
+    .video-actions {
+        bottom: 100px;
+    }
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <div class="logo">TikTok</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="upload-btn">
+                <i class="fas fa-plus"></i>
+            </div>
+        </nav>
+
+        <!-- Main Content - Video Feed -->
+        <div class="video-feed">
+            <!-- Video Card 1 -->
+            <div class="video-card">
+                <video class="video-player" controls autoplay loop>
+                    <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-info">
+                    <div class="user-info">
+                        <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User" class="user-avatar">
+                        <span class="username">@user123</span>
+                    </div>
+                    <p class="video-caption">This is my first TikTok video! #fun #viral</p>
+                </div>
+                <div class="video-actions">
+                    <div class="action-btn" onclick="toggleLike(this)">
+                        <i class="far fa-heart"></i>
+                        <span class="count">1.2K</span>
+                    </div>
+                    <div class="action-btn" onclick="toggleCommentSection(this)">
+                        <i class="far fa-comment"></i>
+                        <span class="count">345</span>
+                    </div>
+                    <div class="action-btn">
+                        <i class="fas fa-share"></i>
+                        <span class="count">56</span>
+                    </div>
+                </div>
+                
+                <!-- Comment Section (hidden by default) -->
+                <div class="comment-section" style="display: none;">
+                    <div class="comments-header">
+                        <h3>Comments</h3>
+                        <i class="fas fa-times close-comments" onclick="closeCommentSection(this)"></i>
+                    </div>
+                    <div class="comments-list">
+                        <div class="comment">
+                            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User" class="comment-avatar">
+                            <div class="comment-content">
+                                <span class="comment-username">@user456</span>
+                                <p class="comment-text">This is so cool! 🔥</p>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User" class="comment-avatar">
+                            <div class="comment-content">
+                                <span class="comment-username">@tiktokfan</span>
+                                <p class="comment-text">Love this content! 😍</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-comment">
+                        <input type="text" placeholder="Add a comment...">
+                        <button class="post-comment-btn">Post</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Card 2 -->
+            <div class="video-card">
+                <video class="video-player" controls autoplay loop>
+                    <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-info">
+                    <div class="user-info">
+                        <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User" class="user-avatar">
+                        <span class="username">@danceking</span>
+                    </div>
+                    <p class="video-caption">New dance challenge! Try it out! #dance #challenge</p>
+                </div>
+                <div class="video-actions">
+                    <div class="action-btn" onclick="toggleLike(this)">
+                        <i class="far fa-heart"></i>
+                        <span class="count">5.7K</span>
+                    </div>
+                    <div class="action-btn" onclick="toggleCommentSection(this)">
+                        <i class="far fa-comment"></i>
+                        <span class="count">1.2K</span>
+                    </div>
+                    <div class="action-btn">
+                        <i class="fas fa-share"></i>
+                        <span class="count">324</span>
+                    </div>
+                </div>
+                
+                <!-- Comment Section (hidden by default) -->
+                <div class="comment-section" style="display: none;">
+                    <div class="comments-header">
+                        <h3>Comments</h3>
+                        <i class="fas fa-times close-comments" onclick="closeCommentSection(this)"></i>
+                    </div>
+                    <div class="comments-list">
+                        <div class="comment">
+                            <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User" class="comment-avatar">
+                            <div class="comment-content">
+                                <span class="comment-username">@dancelover</span>
+                                <p class="comment-text">Amazing moves! 💃</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-comment">
+                        <input type="text" placeholder="Add a comment...">
+                        <button class="post-comment-btn">Post</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <div class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-compass"></i>
+                <span>Discover</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-plus-circle"></i>
+                <span>Create</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-inbox"></i>
+                <span>Inbox</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Me</span>
+            </div>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
